@@ -42,7 +42,6 @@ def play_game(secret_number, attempts_chance):
     print("------------------------------ \n ADIVINHATOR2000 ESTÁ PENSANDO EM UM NÚMERO \n------------------------------")
     time.sleep(1.5)
     attempts_on = 0
-    attempts_off = attempts_chance - attempts_on
     for i in range(attempts_chance):
         #try disable the crash for jokes on the inputs 
         try:
@@ -80,7 +79,7 @@ def play_game(secret_number, attempts_chance):
                 print("Encerrando jogo...")
                 exit()
         print("------------------------------ \n ADIVINHATOR2000 \n------------------------------")        
-        print(f"Restam {attempts_off} tentativas!! \n------------------------------")
+        print(f"Restam {attempts_chance - attempts_on} tentativas!! \n------------------------------")
     print("YOU LOST, jovem pirata... TENTE NOVAMENTE!!")
     dificulty_change()
 #game in easy mode
@@ -92,9 +91,11 @@ def easy_mode():
 def medium_mode():
     secret_number = random.randint(0, 300)
     attempts_chance = 10
+    attempts_on = 0
     play_game(secret_number, attempts_chance)
 #game in HAAAARDDDD MODE, ITS IMPOSSIBLE TO TAKE THE RIGTH NUMBER HERE... i thinking...
 def hard_mode():
+    attempts_on = 0
     secret_number = random.randint(0, 1000)
     attempts_chance = 10
     input(f"{user} você sabe que é impossivel acertar isso né? quer MESMO continuar?:  " )
@@ -112,9 +113,12 @@ def hard_mode():
              continue
         if attempt > secret_number:
                 print("Errou!! é MENOS")
+                attempts_on += 1
         elif attempt < secret_number:
                 print("Errou!! é MAIS")
+                attempts_on += 1
         elif attempt == secret_number:
+                attempts_on += 1
                 print("...")
                 print("Ok, isso foi...")
                 print("muito supeito!!")
@@ -125,6 +129,8 @@ def hard_mode():
                 else:
                     print("Encerrando jogo...")
                     exit()
+        print("------------------------------ \n ADIVINHATOR2000 \n------------------------------")        
+        print(f"Restam {attempts_chance - attempts_on} tentativas!! \n------------------------------")
     print("Como esperado, você não advinhou :( \n Mas relaxa, é você, uma máquina e 1000 números, você não achou mesmo que fosse vencer né?")
     final_lose = input("Deseja tentar novamente?  (S) / (N):  ").upper()
     if final_lose == "S" or final_lose == "SIM":
