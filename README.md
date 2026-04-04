@@ -24,12 +24,13 @@ Um jogo divertido em Python onde o jogador tenta adivinhar um número secreto de
 - Registro do **nome do jogador**.
 - Controle de tentativas por dificuldade.
 - Feedback de dicas para cada palpite.
+- **Ranking de jogadores** em JSON
+- **Easter egg** escondido para o jogador descobrir
 
 ---
 
 ## 🚀 Funcionalidades futuras
 
-- **Ranking de jogadores** em JSON
 - **Easter eggs** escondidos para o jogador descobrir
 - Mais modos e desafios
 - Melhorias na interface e jogabilidade
