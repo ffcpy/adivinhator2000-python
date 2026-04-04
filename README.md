@@ -6,7 +6,7 @@ Um jogo divertido em Python onde o jogador tenta adivinhar um número secreto de
 
 ## 🎮 Como jogar
 
-1. Execute o arquivo `main.py` (ou o arquivo principal do jogo) no Python.
+1. Execute o arquivo `teste.py` (ou o arquivo principal do jogo) no Python.
 2. Insira seu **nome** quando solicitado.
 3. Escolha um nível de dificuldade:
    - **Fácil:** número de 0 a 100
